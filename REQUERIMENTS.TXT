@@ -1,1 +1,6 @@
 #INSTALL NODE JS 
+npm install -g expo-cli
+npm install
+npm install expo --save
+npm install react-native-modal-datetime-picker @react-native-community/datetimepicker
+expo install react-native-modal-datetime-picker @react-native-community/datetimepicker

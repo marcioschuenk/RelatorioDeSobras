@@ -5,15 +5,21 @@ import { MaterialIcons } from '@expo/vector-icons';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
+      <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
       <View style={styles.cardsContainer}>
         <TouchableOpacity
           style={styles.card}
           onPress={() => navigation.navigate('SobrasCarregamento')}
         >
           <View style={styles.iconContainer}>
-            <MaterialIcons name="local-shipping" size={32} color="#FFFFFF" />
+            <MaterialIcons name="local-shipping" size={28} color="#FFFFFF" />
           </View>
-          <Text style={styles.cardText}>Sobras do Carregamento</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.cardText}>Sobras de Carregamento</Text>
+            <Text style={styles.cardSubtext}>Gerencia sobras do carregamento</Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -21,9 +27,13 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('SobrasSalaNobre')}
         >
           <View style={styles.iconContainer}>
-            <MaterialIcons name="meeting-room" size={32} color="#FFFFFF" />
+            <MaterialIcons name="meeting-room" size={28} color="#FFFFFF" />
           </View>
-          <Text style={styles.cardText}>Sobras da Sala Nobre</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.cardText}>Sobras da Sala Nobre</Text>
+            <Text style={styles.cardSubtext}>Gerencia sobras da Sala nobre</Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
         </TouchableOpacity>
       </View>
     </View>
@@ -33,44 +43,57 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 24,
+    backgroundColor: '#F5F5F5',
+    paddingTop: 48,
+    paddingHorizontal: 24,
+  },
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#2E7D32',
+    marginBottom: 40,
+    marginLeft: 8,
   },
   cardsContainer: {
     width: '100%',
-    maxWidth: 400,
   },
-
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#4CAF50',
-    paddingVertical: 20,
-    paddingHorizontal: 24,
-    borderRadius: 16,
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 12,
     width: '100%',
-    marginBottom: 24,
-    elevation: 8,
-    shadowColor: '#00000040',
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
+    marginBottom: 20,
+    elevation: 2,
+    shadowColor: '#1B5E2040',
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    borderLeftWidth: 4,
+    borderLeftColor: '#4CAF50',
   },
   iconContainer: {
-    backgroundColor: '#2E7D32',
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    backgroundColor: '#4CAF50',
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,
   },
-  cardText: {
-    fontSize: 18,
-    color: '#FFFFFF',
-    fontWeight: '600',
+  textContainer: {
     flex: 1,
+  },
+  cardText: {
+    fontSize: 16,
+    color: '#212121',
+    fontWeight: '600',
+  },
+  cardSubtext: {
+    fontSize: 14,
+    color: '#757575',
+    marginTop: 4,
   },
 });
