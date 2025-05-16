@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './HomeScreen';
-import SobrasCarregamentoScreen from './SobrasCarregamentoScreen';
-import SobrasSalaNobreScreen from './SobrasSalaNobreScreen';
+import HomeScreen from '../Screens/HomeScreen';
+import SobrasCarregamentoScreen from '../Screens/SobrasCarregamentoScreen';
+import SobrasSalaNobreScreen from '../Screens/SobrasSalaNobreScreen';
 
 const Stack = createStackNavigator();
 

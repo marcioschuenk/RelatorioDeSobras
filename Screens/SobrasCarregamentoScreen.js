@@ -8,7 +8,7 @@ export default function SobrasCarregamentoScreen() {
     data: '',
     codigo: '',
     quantidade: '',
-    cancelado: '', // Alterado para vazio por padrão
+    cancelado: '',
     descricao: '',
     local: 'Baia',
     ondeQual: '',
@@ -61,7 +61,6 @@ export default function SobrasCarregamentoScreen() {
       <Text style={styles.header}>Registro de Sobras do Carregamento</Text>
       
       <View style={styles.card}>
-        {/* Campo Data movido para o topo com seletor de data */}
         <View style={styles.formGroup}>
           <Text style={styles.label}>Data</Text>
           <TouchableOpacity 
@@ -77,12 +76,15 @@ export default function SobrasCarregamentoScreen() {
             isVisible={isDatePickerVisible}
             mode="date"
             onConfirm={handleConfirm}
+            onChange={handleConfirm}
             onCancel={hideDatePicker}
             locale="pt_BR"
             display="inline"
+            isDarkModeEnabled={false}
             buttonTextColorIOS="#4CAF50"
             textColor="#212121"
             accentColor="#4CAF50"
+            themeVariant="light"
           />
         </View>
 
@@ -192,11 +194,10 @@ export default function SobrasCarregamentoScreen() {
       </View>
 
       <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-        <Text style={styles.submitButtonText}>SALVAR SOBRA</Text>
+        <Text style={styles.submitButtonText}>SALVAR REGISTRO</Text>
         <MaterialIcons name="save" size={20} color="#FFFFFF" style={styles.buttonIcon} />
       </TouchableOpacity>
 
-      {/* Modal de seleção */}
       <Modal visible={modalVisible} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>

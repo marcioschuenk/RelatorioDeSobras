@@ -7,6 +7,7 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
       <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
+      
       <View style={styles.cardsContainer}>
         <TouchableOpacity
           style={styles.card}
