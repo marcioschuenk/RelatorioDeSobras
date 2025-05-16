@@ -15,3 +15,22 @@ datasource db {
 }
 
 
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  password  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Sobras_Carregamento {
+  id        String   @id @default(cuid())
+  codigo    String
+  data      DateTime
+  quantidade Int
+  pedido_cancelado Boolean
+  description String
+  localizacao String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
