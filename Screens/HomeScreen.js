@@ -6,8 +6,10 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
-      <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
-      
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
+      </View>
+
       <View style={styles.cardsContainer}>
         <TouchableOpacity
           style={styles.card}
@@ -48,12 +50,15 @@ const styles = StyleSheet.create({
     paddingTop: 48,
     paddingHorizontal: 24,
   },
+  headerContainer: {
+    alignItems: 'center',
+    marginBottom: 40,
+  },
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
     color: '#2E7D32',
-    marginBottom: 40,
-    marginLeft: 8,
+    textAlign: 'center',
   },
   cardsContainer: {
     width: '100%',

@@ -5,12 +5,12 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 export default function SobrasCarregamentoScreen() {
   const [formData, setFormData] = useState({
-    data: '',
+    data: new Date().toLocaleDateString('pt-BR'), // Data atual por padrão
     codigo: '',
     quantidade: '',
     cancelado: '',
     descricao: '',
-    local: 'Baia',
+    local: '', // Local vazio por padrão
     ondeQual: '',
     quadrante: ''
   });
@@ -76,7 +76,6 @@ export default function SobrasCarregamentoScreen() {
             isVisible={isDatePickerVisible}
             mode="date"
             onConfirm={handleConfirm}
-            onChange={handleConfirm}
             onCancel={hideDatePicker}
             locale="pt_BR"
             display="inline"
@@ -121,7 +120,7 @@ export default function SobrasCarregamentoScreen() {
           <Text style={styles.label}>Pedido cancelado?(Sim/Não)</Text>
           <TouchableOpacity
             style={styles.selectInput}
-            onPress={() => openModal('Cancelado', ['Sim', 'Não'], 'cancelado')}
+            onPress={() => openModal('Cancelado', ['Simm', 'Nãoo'], 'cancelado')}
           >
             <MaterialIcons name="cancel" size={20} color="#4CAF50" style={styles.inputIcon} />
             <Text style={styles.selectText}>
@@ -135,10 +134,10 @@ export default function SobrasCarregamentoScreen() {
           <Text style={styles.label}>Local</Text>
           <TouchableOpacity
             style={styles.selectInput}
-            onPress={() => openModal('Local', ['Baia', 'Carrinho', 'Bancada', 'Rua'], 'local')}
+            onPress={() => openModal('Local', ['Baiaa', 'Carrinhoo', 'Bancadaa', 'Ruaa'], 'local')}
           >
             <MaterialIcons name="location-on" size={20} color="#4CAF50" style={styles.inputIcon} />
-            <Text style={styles.selectText}>{formData.local}</Text>
+            <Text style={styles.selectText}>{formData.local || 'Selecione uma opção'}</Text>
             <MaterialIcons name="keyboard-arrow-down" size={20} color="#757575" />
           </TouchableOpacity>
         </View>
