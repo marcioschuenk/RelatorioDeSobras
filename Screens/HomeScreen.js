@@ -7,6 +7,14 @@ export default function HomeScreen({ navigation }) {
     Linking.openURL('https://forms.gle/gC6cSvuYmwMBm1eW8');
   };
 
+  const handleOpenCarregamentoForm = () => {
+    Linking.openURL('https://forms.gle/e96SPgm4JqNE6sPUA');
+  };
+
+  const handleOpenSalaNobreForm = () => {
+    Linking.openURL('https://forms.gle/7WUcSYFUDcNqK8Vu9');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
@@ -17,28 +25,28 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.cardsContainer}>
         <TouchableOpacity
           style={styles.card}
-          onPress={() => navigation.navigate('SobrasCarregamento')}
+          onPress={handleOpenCarregamentoForm}
         >
           <View style={styles.iconContainer}>
             <MaterialIcons name="local-shipping" size={28} color="#FFFFFF" />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.cardText}>Sobras de Carregamento</Text>
-            <Text style={styles.cardSubtext}>Gerencia sobras do carregamento</Text>
+            <Text style={styles.cardSubtext}>Acessar formulário de sobras</Text>
           </View>
           <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.card}
-          onPress={() => navigation.navigate('SobrasSalaNobre')}
+          onPress={handleOpenSalaNobreForm}
         >
           <View style={styles.iconContainer}>
             <MaterialIcons name="meeting-room" size={28} color="#FFFFFF" />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.cardText}>Sobras da Sala Nobre</Text>
-            <Text style={styles.cardSubtext}>Gerencia sobras da Sala nobre</Text>
+            <Text style={styles.cardSubtext}>Acessar formulário de sobras</Text>
           </View>
           <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
         </TouchableOpacity>

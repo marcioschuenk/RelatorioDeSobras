@@ -1,0 +1,105 @@
+O arquivo eas.json tem que estar assim:
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "preview4": {
+      "distribution": "internal"
+    },
+    "production": {}
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\marcio.bastos\Desktop\PROJETOS GIT\Sobras_e_CarrinhosTemporario\RelatorioDeSobras Temporário> npm install -g eas-cli
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated sudo-prompt@9.1.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated @oclif/screen@3.0.8: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm warn deprecated @xmldom/xmldom@0.7.13: this version is no longer supported, please update to at least 0.8.*
+added 446 packages in 33s
+
+55 packages are looking for funding
+  run `npm fund` for details
+PS C:\Users\marcio.bastos\Desktop\PROJETOS GIT\Sobras_e_CarrinhosTemporario\RelatorioDeSobras Temporário> eas login
+Log in to EAS with email or username (exit and run eas login --help to see other login options)
+√ Email or username ... marcio.bastos
+√ Password ... ********
+Logged in
+
+ 
+PS C:\Users\marcio.bastos\Desktop\PROJETOS GIT\Sobras_e_CarrinhosTemporario\RelatorioDeSobras Temporário> eas build -p android --profile preview
+The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+Resolved "production" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+No environment variables with visibility "Plain text" and "Sensitive" found for the "production" environment on EAS.
+
+The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+✔ Using remote Android credentials (Expo server)
+√ Generate a new Android Keystore? ... yes
+Detected that you do not have keytool installed locally.
+✔ Generating keystore in the cloud...
+✔ Created keystore
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+✔ Uploaded to EAS
+✔ Computed project fingerprint
+
+Build details: https://expo.dev/accounts/marcio.bastos/projects/relatoriodesobras-temporario/builds/4ab44dcb-54f6-4949-8e3d-4658873ff081
+
+Waiting for build to complete. You can press Ctrl+C to exit.
+  Build queued...
+
+Start builds sooner in the priority queue.
+Sign up for EAS Production or Enterprise at https://expo.dev/accounts/marcio.bastos/settings/billing
+
+Waiting in Free tier queue
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|
+
+/ Build in progress...
