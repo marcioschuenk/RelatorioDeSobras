@@ -1,0 +1,100 @@
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet, StatusBar } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+
+export default function HomeScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
+      <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
+      
+      <View style={styles.cardsContainer}>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate('SobrasCarregamento')}
+        >
+          <View style={styles.iconContainer}>
+            <MaterialIcons name="local-shipping" size={28} color="#FFFFFF" />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.cardText}>Sobras de Carregamento</Text>
+            <Text style={styles.cardSubtext}>Gerencia sobras do carregamento</Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate('SobrasSalaNobre')}
+        >
+          <View style={styles.iconContainer}>
+            <MaterialIcons name="meeting-room" size={28} color="#FFFFFF" />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.cardText}>Sobras da Sala Nobre</Text>
+            <Text style={styles.cardSubtext}>Gerencia sobras da Sala nobre</Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5F5F5',
+    paddingTop: 48,
+    paddingHorizontal: 24,
+  },
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#2E7D32',
+    marginBottom: 40,
+    marginLeft: 8,
+  },
+  cardsContainer: {
+    width: '100%',
+  },
+  card: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+    width: '100%',
+    marginBottom: 20,
+    elevation: 2,
+    shadowColor: '#1B5E2040',
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    borderLeftWidth: 4,
+    borderLeftColor: '#4CAF50',
+  },
+  iconContainer: {
+    backgroundColor: '#4CAF50',
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  textContainer: {
+    flex: 1,
+  },
+  cardText: {
+    fontSize: 16,
+    color: '#212121',
+    fontWeight: '600',
+  },
+  cardSubtext: {
+    fontSize: 14,
+    color: '#757575',
+    marginTop: 4,
+  },
+});
