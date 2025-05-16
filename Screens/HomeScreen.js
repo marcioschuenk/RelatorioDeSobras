@@ -1,13 +1,17 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, StatusBar } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, StatusBar, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function HomeScreen({ navigation }) {
+  const handleOpenForm = () => {
+    Linking.openURL('https://forms.gle/gC6cSvuYmwMBm1eW8');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#F5F5F5" barStyle="dark-content" />
       <View style={styles.headerContainer}>
-        <Text style={styles.headerTitle}>Relatórios de Sobras</Text>
+        <Text style={styles.headerTitle}>Relatórios de Sobras e Separação</Text>
       </View>
 
       <View style={styles.cardsContainer}>
@@ -35,6 +39,20 @@ export default function HomeScreen({ navigation }) {
           <View style={styles.textContainer}>
             <Text style={styles.cardText}>Sobras da Sala Nobre</Text>
             <Text style={styles.cardSubtext}>Gerencia sobras da Sala nobre</Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.card}
+          onPress={handleOpenForm}
+        >
+          <View style={styles.iconContainer}>
+            <MaterialIcons name="description" size={28} color="#FFFFFF" />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.cardText}>Separação de carrinhos(Entrega)</Text>
+            <Text style={styles.cardSubtext}>Acessar formulário google</Text>
           </View>
           <MaterialIcons name="chevron-right" size={24} color="#E8F5E9" />
         </TouchableOpacity>
